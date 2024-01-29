@@ -9,7 +9,10 @@ phases:
 
   pre_build:
     commands:
+      - ls -al dist/
       - npm install
+      - npm --version
+      - node -v
 
   build:
     commands:
@@ -18,9 +21,6 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: 'dist/'
-  name: 'angular-app'
-  discard-paths: yes  # Discard paths in artifacts
 
 cache:
   paths:
