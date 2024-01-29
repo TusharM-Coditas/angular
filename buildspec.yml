@@ -9,7 +9,6 @@ phases:
 
   pre_build:
     commands:
-      - if [ -d "dist/" ]; then ls -al dist/; else echo "dist/ directory not found."; exit 1; fi
       - npm install
       - npm --version
       - node -v
