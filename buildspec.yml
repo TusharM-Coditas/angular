@@ -20,10 +20,8 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: 'dist/'  # Assuming the build artifacts are in the dist/ directory
+  base-directory: 'ci-cd-s3-codedeploy-bucket/dist/dist/'  # Assuming the build artifacts are in the dist/ directory
   name: 'angular-app'
-  discard-paths: yes  # Discard paths in artifacts
-  location: 's3://ci-cd-s3-codedeploy-bucket/dist/'  # S3 bucket location
 
 cache:
   paths:
