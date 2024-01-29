@@ -20,9 +20,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: 'ci-cd-s3-codedeploy-bucket/dist/dist/'  # Assuming the build artifacts are in the dist/ directory
-  name: 'angular-app'
 
-cache:
-  paths:
-    - node_modules/**
