@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 14
+      nodejs: 18
     commands:
       - npm install -g @angular/cli
 
@@ -20,7 +20,7 @@ artifacts:
     - '**/*'
   base-directory: 'dist/'
   name: 'angular-app'
-  bucket-name: 'ci-cd-s3-codedeploy-bucket'
+  discard-paths: yes  # Discard paths in artifacts
 
 cache:
   paths:
