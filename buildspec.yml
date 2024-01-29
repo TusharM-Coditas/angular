@@ -9,7 +9,7 @@ phases:
 
   pre_build:
     commands:
-      - ls -al dist/
+      - if [ -d "dist/" ]; then ls -al dist/; else echo "dist/ directory not found."; exit 1; fi
       - npm install
       - npm --version
       - node -v
@@ -21,6 +21,10 @@ phases:
 artifacts:
   files:
     - '**/*'
+  base-directory: 'dist/'  # Assuming the build artifacts are in the dist/ directory
+  name: 'angular-app'
+  discard-paths: yes  # Discard paths in artifacts
+  location: 's3://ci-cd-s3-codedeploy-bucket/dist/'  # S3 bucket location
 
 cache:
   paths:
