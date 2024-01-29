@@ -19,8 +19,9 @@ artifacts:
   files:
     - '**/*'
   base-directory: 'dist/'
+  name: 'angular-app'
+  bucket-name: 'ci-cd-s3-codedeploy-bucketInfo'
 
 cache:
   paths:
     - node_modules/**
-
