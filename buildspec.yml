@@ -1,28 +1,21 @@
 version: 0.2
-
-#@env:
-#  variables:
-#S3_BUCKET_NAME: "ci-cd-s3-codedeploy-bucket"
-
+env:
+  variables:
+    APP_NAME: "angular-cicd-pipeline-demo"
 phases:
   install:
     runtime-versions:
-      nodejs: 18
+      nodejs: 18.x
     commands:
-      - npm install -g @angular/cli
-
-  pre_build:
-    commands:
-      - npm install
-      - npm --version
-      - node -v
-
+      - echo install process started
+      - npm install && npm install -g @angular/cli
   build:
     commands:
+      - echo build process started now
       - ng build
-      - aws s3 sync build/ s3://ci-cd-s3-codedeploy-bucket
-
-artifacts:
-  files:
-    - '**/*'
-
+  post_build:
+    commands:
+      - echo build process finished, we should uplload to S3 now
+      - cd dist/$APP_NAME
+      - ls -la
+      - aws s3 sync . s3://my-awsome-bucket-of-files --delete
