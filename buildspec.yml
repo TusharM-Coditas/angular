@@ -1,5 +1,9 @@
 version: 0.2
 
+#@env:
+#  variables:
+#S3_BUCKET_NAME: "ci-cd-s3-codedeploy-bucket"
+
 phases:
   install:
     runtime-versions:
