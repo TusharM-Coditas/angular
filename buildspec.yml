@@ -18,4 +18,4 @@ phases:
       - echo build process finished, we should upload to S3 now
       - cd dist/
       - ls -la
-      - aws s3 sync . s3://angular-cicd-poc --delete
+      - aws s3 sync build/ s3://angular-cicd-poc
