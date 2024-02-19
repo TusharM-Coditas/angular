@@ -17,4 +17,4 @@ phases:
     commands:
       - echo build process finished, we should upload to S3 now
       - ls -la dist/
-      - aws s3 sync dist/ s3://angular-cicd-poc
+      - aws s3 sync dist/ s3://angular-cicd-poc/
